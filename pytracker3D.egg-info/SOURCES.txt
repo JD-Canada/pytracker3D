@@ -1,0 +1,6 @@
+pytracker3D/__init__.py
+pytracker3D.egg-info/PKG-INFO
+pytracker3D.egg-info/SOURCES.txt
+pytracker3D.egg-info/dependency_links.txt
+pytracker3D.egg-info/not-zip-safe
+pytracker3D.egg-info/top_level.txt
