@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1500</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_13">
+    <item row="1" column="1">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::West</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Tracking</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="1" rowspan="2">
+         <widget class="QGroupBox" name="groupBox_7">
+          <property name="toolTip">
+           <string>Video loading functions</string>
+          </property>
+          <property name="title">
+           <string>Tracking:</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_8">
+           <item row="3" column="0">
+            <widget class="QGroupBox" name="groupBox_2">
+             <property name="toolTip">
+              <string>Lower limit for detectable contour area in pixels</string>
+             </property>
+             <property name="title">
+              <string>Live video treatment:</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_4">
+              <item row="7" column="0">
+               <widget class="QCheckBox" name="medianFilterCheckbox">
+                <property name="toolTip">
+                 <string>Removes fuzzy noise (slow)</string>
+                </property>
+                <property name="text">
+                 <string>Apply median filter</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="3">
+               <widget class="QLabel" name="kernelValueLabel">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="4">
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>px</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLineEdit" name="highPass_le">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Before tracking, specify the highpass contour area threshold for detection. All contours with areas less than the specified threshold value will be discarded. Sometimes it is useful to track once with a low threshold value as a guess and then look at the tracking output to determine a better guess for a second pass through the tracking. Threshold pixel area defaults to 100 pixels.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string>100</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="4">
+               <widget class="QLabel" name="label_5">
+                <property name="text">
+                 <string>px</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="3">
+               <widget class="QLabel" name="gaussValueLabel">
+                <property name="text">
+                 <string>6</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QCheckBox" name="gaussCheckBox">
+                <property name="toolTip">
+                 <string>Smooth out image by applying a Gaussian filter.</string>
+                </property>
+                <property name="text">
+                 <string>Use Guassian blur</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="4">
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>px</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="3">
+               <widget class="QLabel" name="label_6">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="3">
+               <widget class="QLabel" name="medianValueLabel">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="label_11">
+                <property name="text">
+                 <string>high-pass area (min. # of pixels in contour area)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QCheckBox" name="lowPass_cb">
+                <property name="text">
+                 <string>Apply low-pass</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QCheckBox" name="highPass_cb">
+                <property name="text">
+                 <string>Apply high-pass</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLineEdit" name="lowPass_le">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>60</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Before tracking, specify the lowpass contour area threshold for detection. All contours with areas greater than the specified threshold value will be discarded. Sometimes it is useful to track once with a low threshold value as a guess and then look at the tracking output to determine a better guess for a second pass through the tracking. Lowpass threshold pixel area defaults to 8000 pixels.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string>8000</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="1">
+               <widget class="QSlider" name="medianSlider">
+                <property name="toolTip">
+                 <string>Choose of Median kernal</string>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QSlider" name="gaussSlider">
+                <property name="toolTip">
+                 <string>Vary the size in pixels of the Gaussian Kernel.</string>
+                </property>
+                <property name="value">
+                 <number>6</number>
+                </property>
+                <property name="sliderPosition">
+                 <number>6</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="invertedControls">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>low-pass area (max. # of pixels in contour area)</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+             <zorder>label_6</zorder>
+             <zorder>gaussCheckBox</zorder>
+             <zorder>medianFilterCheckbox</zorder>
+             <zorder>gaussValueLabel</zorder>
+             <zorder>kernelValueLabel</zorder>
+             <zorder>medianValueLabel</zorder>
+             <zorder>label_9</zorder>
+             <zorder>label</zorder>
+             <zorder>label_5</zorder>
+             <zorder>highPass_le</zorder>
+             <zorder>lowPass_cb</zorder>
+             <zorder>highPass_cb</zorder>
+             <zorder>label_11</zorder>
+             <zorder>gaussSlider</zorder>
+             <zorder>medianSlider</zorder>
+             <zorder>lowPass_le</zorder>
+             <zorder>label_2</zorder>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="trkTrack_B">
+             <property name="toolTip">
+              <string>Starts object tracking on currently loaded video.</string>
+             </property>
+             <property name="text">
+              <string>Track</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="saveTrack_b">
+             <property name="text">
+              <string>Save track</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QTabWidget" name="tabWidget_2">
+             <property name="currentIndex">
+              <number>3</number>
+             </property>
+             <widget class="QWidget" name="tab_2">
+              <attribute name="title">
+               <string>Project</string>
+              </attribute>
+              <layout class="QFormLayout" name="formLayout_2">
+               <item row="0" column="0" colspan="2">
+                <widget class="QGroupBox" name="groupBox_12">
+                 <property name="title">
+                  <string>Chose project path:</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_22">
+                  <item row="0" column="0" colspan="2">
+                   <widget class="QPushButton" name="chooseProjectPath_b">
+                    <property name="toolTip">
+                     <string>Choose project path.</string>
+                    </property>
+                    <property name="text">
+                     <string>Choose project path</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QLabel" name="active_path_label">
+                    <property name="text">
+                     <string>No path specified</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_20">
+                    <property name="text">
+                     <string>Active path:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_3">
+              <attribute name="title">
+               <string>Video</string>
+              </attribute>
+              <layout class="QFormLayout" name="formLayout_3">
+               <item row="0" column="0" colspan="2">
+                <widget class="QGroupBox" name="groupBox">
+                 <property name="autoFillBackground">
+                  <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="title">
+                  <string>Video parameters:</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_9">
+                  <item row="2" column="0">
+                   <widget class="QPushButton" name="trkPreview_B">
+                    <property name="toolTip">
+                     <string>Quickly preview video before tracking.</string>
+                    </property>
+                    <property name="text">
+                     <string>Fast Preview</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_10">
+                    <property name="text">
+                     <string>Video path:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0" rowspan="2">
+                   <widget class="QPushButton" name="trkLoad_B">
+                    <property name="toolTip">
+                     <string>Load video to be tracked.</string>
+                    </property>
+                    <property name="text">
+                     <string>Load Video</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="pathLabel">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>400</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>No video loaded</string>
+                    </property>
+                    <property name="scaledContents">
+                     <bool>false</bool>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_6">
+              <attribute name="title">
+               <string>Detection</string>
+              </attribute>
+              <layout class="QFormLayout" name="formLayout_4">
+               <item row="0" column="0" colspan="2">
+                <widget class="QGroupBox" name="groupBox_19">
+                 <property name="title">
+                  <string>Background subtraction method:</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_17">
+                  <item row="0" column="0">
+                   <widget class="QFrame" name="frame_5">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_6">
+                     <item row="5" column="0">
+                      <widget class="QGroupBox" name="groupBox_8">
+                       <property name="enabled">
+                        <bool>true</bool>
+                       </property>
+                       <property name="title">
+                        <string>Chose and option:</string>
+                       </property>
+                       <layout class="QFormLayout" name="formLayout_7">
+                        <item row="2" column="1">
+                         <widget class="QPushButton" name="selBackgroundVid_b">
+                          <property name="enabled">
+                           <bool>true</bool>
+                          </property>
+                          <property name="text">
+                           <string>Extract frame from video</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="1" column="1">
+                         <widget class="QPushButton" name="choose_background_b">
+                          <property name="enabled">
+                           <bool>true</bool>
+                          </property>
+                          <property name="text">
+                           <string>Chose blank image</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QRadioButton" name="firstFrame_rb">
+                       <property name="text">
+                        <string>Use first frame as background</string>
+                       </property>
+                       <property name="checked">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QRadioButton" name="specifyBackground_rb">
+                       <property name="text">
+                        <string>Specify background image</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QRadioButton" name="mog_rb">
+                       <property name="text">
+                        <string>MOG background subtraction</string>
+                       </property>
+                       <property name="checked">
+                        <bool>false</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_8">
+              <attribute name="title">
+               <string>Block-out regions</string>
+              </attribute>
+              <layout class="QFormLayout" name="formLayout_5">
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_6">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="title">
+                  <string>Block-out regions:</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_18">
+                  <item row="2" column="2">
+                   <widget class="QPushButton" name="enableBlock_b">
+                    <property name="text">
+                     <string>Enable</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QCheckBox" name="blockOutRegions_cb">
+                    <property name="enabled">
+                     <bool>true</bool>
+                    </property>
+                    <property name="text">
+                     <string>Block out regions</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0" rowspan="4">
+                   <widget class="QListWidget" name="blockRegions_lw">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QPushButton" name="disableBlock_b">
+                    <property name="text">
+                     <string>Disable</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="addBlock_b">
+                    <property name="text">
+                     <string>Add</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QPushButton" name="deleteBlock_b">
+                    <property name="text">
+                     <string>Delete</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QPushButton" name="saveBlock_b">
+                    <property name="text">
+                     <string>Save</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QPushButton" name="loadBlock_b">
+                    <property name="text">
+                     <string>Load</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1" colspan="2">
+                   <widget class="Line" name="line">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_9">
+              <attribute name="title">
+               <string>Tracking limits</string>
+              </attribute>
+              <layout class="QFormLayout" name="formLayout_6">
+               <item row="0" column="0" colspan="2">
+                <widget class="QGroupBox" name="groupBox_20">
+                 <property name="title">
+                  <string>Track control:</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout">
+                  <item row="1" column="0">
+                   <widget class="QFrame" name="frame_3">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_12">
+                     <item row="1" column="0">
+                      <widget class="QSpinBox" name="start_sb">
+                       <property name="maximum">
+                        <number>999998</number>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_8">
+                       <property name="text">
+                        <string>Track between frames :</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QSpinBox" name="stop_sb">
+                       <property name="maximum">
+                        <number>1000000</number>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="selectStartStop_b">
+                    <property name="toolTip">
+                     <string>Prompts user to select temporal range on selected video to be tracked.</string>
+                    </property>
+                    <property name="text">
+                     <string>Select tracking start and stop frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>Tracking output:</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QTextBrowser" name="track_TE">
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>0</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>Processing</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_14">
+        <item row="0" column="0" rowspan="2">
+         <widget class="QGroupBox" name="groupBox_9">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="title">
+           <string>Post-processing</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QWidget" name="widget_2" native="true">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_10">
+              <item row="0" column="0" colspan="2">
+               <widget class="QGroupBox" name="groupBox_3">
+                <property name="title">
+                 <string>Import 2D tracks for edit and reconstruction:</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_3">
+                 <item row="3" column="1">
+                  <widget class="QPushButton" name="reorder_b">
+                   <property name="text">
+                    <string>Save reordered views</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QPushButton" name="deleteTrack_b">
+                   <property name="text">
+                    <string>Delete track</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0" rowspan="8">
+                  <widget class="QListWidget" name="tracks_lw">
+                   <property name="toolTip">
+                    <string>Selected item in list is the active file for post-processing. Make sure cameras appear in list in ascending order (i.e. first, second, third camera going upstream).</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QCheckBox" name="show2Dplot_B">
+                   <property name="text">
+                    <string>Show plot (select or change)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QPushButton" name="loadTracks_b">
+                   <property name="toolTip">
+                    <string>Select all file for post-processing a single trajectory.</string>
+                   </property>
+                   <property name="text">
+                    <string>Load tracks ...</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="1">
+                  <widget class="Line" name="line_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QPushButton" name="delAllTracks_b">
+                   <property name="toolTip">
+                    <string>Unload all previously loaded tracks</string>
+                   </property>
+                   <property name="text">
+                    <string>Delete all tracks</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="1">
+                  <widget class="QGroupBox" name="groupBox_11">
+                   <property name="title">
+                    <string>Edit 2D track -&gt; </string>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_3">
+                    <item>
+                     <widget class="QPushButton" name="ppBlank_B">
+                      <property name="toolTip">
+                       <string>Removed erroneous data from selected rows in the table.</string>
+                      </property>
+                      <property name="text">
+                       <string>Blank selected rows on track </string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="interpolate_b">
+                      <property name="text">
+                       <string>Interpolate blank rows</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="ppUndo_B">
+                      <property name="toolTip">
+                       <string>Reverts active track back to its orginal state.</string>
+                      </property>
+                      <property name="text">
+                       <string>Undo changes to active track</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="saveTrackEdits_b">
+                      <property name="text">
+                       <string>Save track as ...</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTabWidget" name="tabWidget_5">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <widget class="QWidget" name="tab_4">
+              <attribute name="title">
+               <string>Create calibration</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <widget class="QPushButton" name="newCalibration_b">
+                 <property name="text">
+                  <string>Create new calibration</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_11">
+              <attribute name="title">
+               <string>Load Calibration</string>
+              </attribute>
+              <layout class="QFormLayout" name="formLayout_8">
+               <item row="0" column="0" colspan="2">
+                <widget class="QGroupBox" name="groupBox_10">
+                 <property name="title">
+                  <string>Perform 3D reconstruction:</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_7">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="loadCal_b">
+                    <property name="text">
+                     <string>Load calibration file</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QPushButton" name="showCal_b">
+                    <property name="text">
+                     <string>Show calibration in TableView</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_12">
+              <attribute name="title">
+               <string>Construct 3D track</string>
+              </attribute>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="3" column="1">
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="reconstruct_3D_b">
+                 <property name="text">
+                  <string>Reconstruct 3D</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QPushButton" name="save3DTrack_b">
+                 <property name="text">
+                  <string>Save 3D track</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QGroupBox" name="groupBox_13">
+                 <property name="title">
+                  <string>Plot controls:</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_11">
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_23">
+                    <property name="text">
+                     <string>z</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_17">
+                    <property name="text">
+                     <string>x</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_22">
+                    <property name="text">
+                     <string>y</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QLabel" name="label_27">
+                    <property name="text">
+                     <string>max.</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QLineEdit" name="ymin_le"/>
+                  </item>
+                  <item row="3" column="3">
+                   <widget class="QLineEdit" name="ymax_le"/>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLineEdit" name="zmin_le"/>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="label_26">
+                    <property name="text">
+                     <string>min.</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLineEdit" name="xmin_le"/>
+                  </item>
+                  <item row="1" column="3">
+                   <widget class="QLineEdit" name="xmax_le"/>
+                  </item>
+                  <item row="4" column="3">
+                   <widget class="QLineEdit" name="zmax_le"/>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_3">
+                    <property name="text">
+                     <string>Set axis limits:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="2">
+                   <spacer name="verticalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="5" column="1" colspan="3">
+                   <widget class="QPushButton" name="plot3D_b">
+                    <property name="text">
+                     <string>Plot 3D track</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QPushButton" name="show3Dcoords_b">
+                 <property name="text">
+                  <string>Show 3D coordinates</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="title">
+           <string>Table view:</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QTableView" name="pp_TV">
+             <property name="minimumSize">
+              <size>
+               <width>300</width>
+               <height>0</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="tableItem_l">
+             <property name="text">
+              <string>Current item</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>specifyBackground_rb</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupBox_8</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>161</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>188</x>
+     <y>186</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lowPass_cb</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lowPass_le</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>559</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>112</x>
+     <y>579</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lowPass_cb</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_2</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>556</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>581</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>highPass_cb</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>highPass_le</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>244</x>
+     <y>558</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>110</x>
+     <y>606</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>highPass_cb</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_11</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>280</x>
+     <y>554</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>294</x>
+     <y>603</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

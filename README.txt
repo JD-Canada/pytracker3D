@@ -1,0 +1,1 @@
+pyinstaller --onefile .\pytracker3D.py --add-data "C:\Users\Jason\Anaconda3\Lib\site-packages\cv2\opencv_ffmpeg340_64.dll;./"
