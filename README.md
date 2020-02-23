@@ -6,9 +6,9 @@ Stay tuned. I plan on uploading a explanatory video to YouTube in a short while.
 To launch pytracker3D:
 
 1.) Make sure you have a properly configured Python 3.6 installation (I recommended the Anaconda distribution)
-2.) From the termina, (command prompt, conda prompt, etc.), install the opencv package for python: pip install opencv-python
+2.) From the terminal, (command prompt, conda prompt, etc.), install the opencv package for python: pip install opencv-python
 3.) Navigate to the directory you downloaded the code to
-4.) Type: python pytracker3D.py in the command line
+4.) Type python pytracker3D.py in the command line
 5.) After a few seconds a window will pop up and you can begin the tracking process.
 
 To track in 3D you will need:
